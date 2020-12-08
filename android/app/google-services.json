@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "390478439064",
+    "project_id": "ungtanfun",
+    "storage_bucket": "ungtanfun.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390478439064:android:2193319d8c0a9696b426ed",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.ungtanfun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390478439064-pcf15ef1i2u4vvcdffqmlqbkt2kr3n1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy4-xhjRXs00R0iGyKiEL07Wt8mFZUvt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390478439064-pcf15ef1i2u4vvcdffqmlqbkt2kr3n1a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
