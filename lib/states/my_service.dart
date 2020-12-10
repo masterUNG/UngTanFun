@@ -6,6 +6,7 @@ import 'package:ungtanfun/models/user_model.dart';
 import 'package:ungtanfun/states/authen.dart';
 import 'package:ungtanfun/states/home.dart';
 import 'package:ungtanfun/states/information.dart';
+import 'package:ungtanfun/states/showvideo.dart';
 import 'package:ungtanfun/utility/my_style.dart';
 
 class MyService extends StatefulWidget {
@@ -15,7 +16,7 @@ class MyService extends StatefulWidget {
 
 class _MyServiceState extends State<MyService> {
   UserModel userModel;
-  Widget currentWidget = Home();
+  Widget currentWidget = ShowVideo();
 
   @override
   void initState() {
