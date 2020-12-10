@@ -1,3 +1,4 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -8,16 +9,26 @@ class ShowVideo extends StatefulWidget {
 
 class _ShowVideoState extends State<ShowVideo> {
   VideoPlayerController videoPlayerController;
+  ChewieController chewieController;
 
   @override
   void initState() {
     super.initState();
-    String dataSource =
-        'http://edge4-bkk.3bb.co.th:1935/CartoonClub_Livestream/cartoonclub_480P.stream/playlist.m3u8';
-    videoPlayerController = VideoPlayerController.network(dataSource)
-      ..initialize().then((value) {
-        setState(() {});
-      });
+    // String dataSource =
+    //     'http://edge4-bkk.3bb.co.th:1935/CartoonClub_Livestream/cartoonclub_480P.stream/playlist.m3u8';
+    // videoPlayerController = VideoPlayerController.network(dataSource)
+    //   ..initialize().then((value) {
+    //     setState(() {});
+    //   });
+
+    videoPlayerController = VideoPlayerController.network(
+        'http://edge4-bkk.3bb.co.th:1935/CartoonClub_Livestream/cartoonclub_480P.stream/playlist.m3u8');
+    chewieController = ChewieController(
+      videoPlayerController: videoPlayerController,
+      aspectRatio: 3 / 2,
+      autoPlay: true,
+      looping: false,
+    );
   }
 
   @override
@@ -30,9 +41,13 @@ class _ShowVideoState extends State<ShowVideo> {
               : videoPlayerController.play();
         });
       }),
-      body: videoPlayerController.value.initialized
-          ? AspectRatio(aspectRatio: videoPlayerController.value.aspectRatio)
-          : Text('Cannot Open Video'),
+      body: Chewie(
+        controller: chewieController,
+      ),
     );
+    //   body: videoPlayerController.value.initialized
+    //       ? AspectRatio(aspectRatio: videoPlayerController.value.aspectRatio)
+    //       : Text('Cannot Open Video'),
+    // );
   }
 }
